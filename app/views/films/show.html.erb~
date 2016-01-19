@@ -1,0 +1,50 @@
+<h1>Listing Films</h1>
+ 
+<table>
+  <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Rated</th>
+      <th>Released</th>
+      <th>Runtime</th>
+      <th>Genre</th>
+      <th>Director</th>
+      <th>Writer</th>
+      <th>Actors</th>
+      <th>Plot</th>
+      <th>Language</th>
+      <th>Country</th>
+      <th>Awards</th>
+      <th>Poster</th>
+      <th>Metascore</th>
+      <th>ImdbRating</th>
+      <th>ImdbVotes</th>
+      <th>ImdbID</th>
+      <th>Type</th>
+
+  </tr>
+    <tr>
+      <td><%= @film.Id %></td>      
+      <td><%= @film.Title %></td>
+      <td><%= @film.Year %></td>
+      <td><%= @film.Rated %></td>
+      <td><%= @film.Released %></td>
+      <td><%= @film.Runtime %></td>
+      <td><%= @film.Genre %></td>
+      <td><%= @film.Director %></td>
+      <td><%= @film.Writer %></td>
+      <td><%= @film.Actors %></td>
+      <td><%= @film.Plot %></td>
+      <td><%= @film.Language %></td>
+      <td><%= @film.Country %></td>
+      <td><%= @film.Awards %></td>
+      <td><img src="<%= @film.Poster %>"></img></td>
+      <td><%= @film.Metascore %></td>
+      <td><%= @film.ImdbRating %></td>
+      <td><%= @film.ImdbVotes %></td>
+      <td><%= @film.ImdbID %></td>
+      <td><%= @film.Type %></td>
+
+    </tr>
+</table>

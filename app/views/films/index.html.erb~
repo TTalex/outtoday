@@ -1,0 +1,36 @@
+<h1>All movies in db</h1>
+ 
+
+<div id="main">
+  <% @films.each do |film| %>
+  <div class="film">
+    <div id="poster">
+    <%= image_tag film.Poster %>
+    </div>
+    <div id="info">
+    <div id="title">
+      <%= link_to film.Title, "http://imdb.com/title/"+film.ImdbID %>
+    </div>
+    <div id="released">
+      <%= film.formatdate %>
+    </div>
+    <div id="rating">
+      <%= film.ImdbRating %>/10
+    </div>
+    <div class="names">
+      <%= film.Director %>
+    </div>
+    <div class="names">
+      <%= film.Actors %>
+    </div>
+    
+    <div id="plot">
+      <%= film.Plot %>
+    </div>
+    <% if current_user %>
+    <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
+

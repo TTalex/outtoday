@@ -1,0 +1,45 @@
+<h1>Movies out around <%= DateTime.now.strftime("%B %d") %></h1>
+<% @films.each do |film| %>
+<% if current_user and current_user.has_film(film) %>
+<div class="film filmseen">
+  <% else %>
+  <div class="film">
+    <% end %>
+    <div id="poster">
+      <%= image_tag film.Poster %>
+    </div>
+    <div id="info">
+      <div id="title">
+	<%= link_to film.Title, "http://imdb.com/title/"+film.ImdbID %>
+      </div>
+      <div id="released">
+	<%= film.formatdate %>
+      </div>
+      <div id="rating">
+	<%= film.ImdbRating %>/10
+      </div>
+      <div class="names">
+	<%= film.Director %>
+      </div>
+      <div class="names">
+	<%= film.Actors %>
+      </div>
+      
+      <div id="plot">
+	<%= film.Plot %>
+      </div>
+      <% if current_user %>
+      <div id="add">  
+	<% if current_user.has_film(film) %>
+	<%= link_to "Remove movie", user_path(current_user)+"/rmfilm/"+film.id.to_s %>
+	<% else %>
+	<%= link_to "Add movie", user_path(current_user)+"/addfilm/"+film.id.to_s %>
+	<% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+  
+  
+  
