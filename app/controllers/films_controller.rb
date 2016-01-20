@@ -31,6 +31,6 @@ class FilmsController < ApplicationController
   def outtoday
     first_date = convertdate(DateTime.now - 4)
     last_date = convertdate(DateTime.now + 4)
-    @films = Film.where("Released >= ? and Released <= ?", first_date, last_date).sort_by { |f| f.ImdbRating }.reverse
+    @films = Film.where("\"Released\" >= ? and \"Released\" <= ?", first_date, last_date).sort_by { |f| f.ImdbRating }.reverse
   end
 end
